@@ -172,10 +172,13 @@ form{
 
 @media only screen and (max-width: 768px){
     .menu-container{
-        width: 72px;
-        height: 224px;
+       display: none;
     }
-    
+
+    .container{
+        padding-right: 0px;
+    }
+
     .todo{
         min-height: 360px;
         min-width: 320px;
