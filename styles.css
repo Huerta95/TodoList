@@ -171,15 +171,31 @@ form{
 
 
 @media only screen and (max-width: 1024px){
-    .container{
-        min-width: 40vw;
-        max-width: 60vw;
+    .todo{
+        min-width: 40%;
+        max-width: 60%;
     }    
+
+    .container{
+        padding-right: 10vw;
+    }
+    
+    .menu-container{
+        width: 9vw;
+    }
 }
 
 @media only screen and (max-width: 768px){
-    .container{
-        min-width: 60vw;
-        max-width: 80vw;
+    .todo{
+        min-width: 70%;
+        max-width: 85%;
     }    
+
+    .container{
+        padding-right: 13vw;
+    }
+    
+    .menu-container{
+        width: 13vw;
+    }
 }
