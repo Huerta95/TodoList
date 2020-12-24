@@ -181,4 +181,8 @@ form{
         min-width: 320px;
         max-width: 480px;
     }
+    
+    .todo-input{
+        width: 70%;
+    }
 }
