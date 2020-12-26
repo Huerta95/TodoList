@@ -1,11 +1,12 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
-const deleteButton = document.querySelector("trash-btn");
+const filterOption = document.querySelector(".todo-filters");
 
 //El presionar el boton "todo-button", iniciara la funcion addTodo.
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteTodo);
+filterOption.addEventListener('click', filterTodo);
 
 
 function addTodo(event){
@@ -36,8 +37,44 @@ function addTodo(event){
 function deleteTodo(e){
     const item = e.target;
     
+    //Esto codigo reconoce si presionas el boton de basura.
     if(item.classList[0] === "trash-btn"){
         const todo = item.parentElement;
-        todo.remove();
+        todo.classList.add("removeAnim");
+        todo.addEventListener('transitionend', function(){
+            todo.remove();
+        })
     }
+
+    //Este reconoce si presionas la palomita.
+    if(item.classList[0] === "complete-btn"){
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
+        item.classList.toggle('check-completed');
+    }
+}
+
+function filterTodo(e){
+    const filter = e.target;
+    const todos = todoList.childNodes;
+
+    todos.forEach(function(todo){
+        switch (filter.classList[0]){
+            case "all-button":
+                todo.style.display = "grid";
+                break;
+
+            case "completed-button":
+                if(todo.classList.contains("completed")){
+                    todo.style.display = "grid";
+                }else todo.style.display = "none";
+                break;
+            
+            case "progress-button":
+                if(!todo.classList.contains("completed")){
+                    todo.style.display = "grid";
+                }else todo.style.display = "none";
+                break;
+        }
+    })
 }
