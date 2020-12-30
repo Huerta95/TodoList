@@ -98,9 +98,21 @@ body{
     align-self: start;
     padding: 2% 6%;
     color: white;
+    width: 100%;
 }
-.todo h1{
+
+.list-name{
     font-size: 25px;
+    width: 95%;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+::placeholder{
+    opacity: 1;
+    color: white;
 }
 
 .todo p{
@@ -150,7 +162,7 @@ form{
 .new-todo{
     width: 100%;
     min-height: 37px;
-    max-height: 50px;
+    max-height: 60px;
     display: grid;
     grid-template-columns: 80fr 10fr 10fr;
     transition: all .6s ease;
